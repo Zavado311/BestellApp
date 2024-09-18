@@ -1,0 +1,192 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto-Regular.ttf") format("ttf"),
+    url("fonts/DeineSchriftart.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Roboto", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.sectionDesign {
+  display: flex;
+}
+
+.sectionDesign {
+  max-width: 1440px;
+  margin: 0 auto;
+  border: 0;
+}
+
+header {
+  background-color: rgb(243, 142, 59);
+}
+
+.overallMenu {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.contentWrapper {
+  gap: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.content {
+  width: calc(100% - 300px);
+  padding: 16px 0 0 5px;
+}
+
+.backgroundRestaurant {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.logoRestaurant {
+  display: flex;
+  justify-content: center;
+}
+
+.imgLogo {
+  height: 100px;
+  width: 100px;
+  top: 270px;
+  border-radius: 6px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.75);
+}
+
+.restaurantTitle {
+  padding-top: 20px;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.restaurantReview {
+  padding-top: 8px;
+  color: rgb(95, 94, 3);
+}
+
+.imgRestaurant img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+}
+
+.mainCategory {
+    position: relative; 
+    margin-bottom: 5px;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainCategory::before {    
+    content: "";
+    background-image: url(/assets/img/Margherita.jpg);
+    background-size: cover;
+    object-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
+
+.asideCategory {
+    position: relative; 
+    margin-bottom: 5px;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.asideCategory::before {    
+    content: "";
+    background-image: url(/assets/img/bruschetta.png);
+    background-size: cover;
+    object-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
+
+.dessertCategory {
+    position: relative; 
+    margin-bottom: 5px;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dessertCategory::before {    
+    content: "";
+    background-image: url(/assets/img/cheesecake.jpg);
+    background-size: cover;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
+
+.titleCategory {
+  position: relative;
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  font-style: italic;
+}
+
+.sectionDesignFooter {
+  background-color: beige;
+}

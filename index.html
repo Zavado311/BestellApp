@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/scripts/template.js"></script>
+    <script src="/scripts/objects.js"></script>
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style/products.css" />
+    <link rel="stylesheet" href="/style/basket.css" />
+    <title>elCommelon</title>
+  </head>
+  <body onload="init()">
+    <header class="sectionDesignHeader">
+      <div class="overallMenu">
+        <a href="index.html"><img class="logo" src="/assets/icons/Material/Logo/Bestell App- Logo.svg" alt="" /></a>
+        <nav>
+          <ul>
+            <li><a href="">Test</a></li>
+            <li><a href="">Test</a></li>
+            <li><a href="">Test</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="sectionDesign">
+      <div class="contentWrapper">
+        <div class="content">
+          <div class="imgRestaurant">
+            <img src="/assets/img/restaurant.jpg" alt="" />
+          </div>
+          <div class="backgroundRestaurant">
+            <div class="logoRestaurant">
+              <img class="imgLogo" src="/assets/img/pizza.png" alt="" />
+            </div>
+            <div class="restaurantTitle">Sam's Pizzeria</div>
+            <div class="restaurantDescription">
+              Willkommen bei Sam's Pizzeria, wo italienische Tradition auf
+              amerikanische Kreativität trifft! Unsere im Steinofen gebackenen
+              Pizzen bieten eine perfekte Mischung aus knusprigem Boden und
+              saftigen Belägen. Genieße frische Zutaten in einem gemütlichen,
+              rustikalen Ambiente ideal für Familien, Freunde oder einen
+              entspannten Abend.
+            </div>
+            <div class="restaurantReview">Bewertung (4.2 von 5 Sternen)</div>
+            <div class="restaurantPlates">
+              <ul class="listPlates">
+                <li><a href="#mainDishlist">Hauptgerichte</a></li>
+                <li><a href="#asideDishlist">Beilagen</a></li>
+                <li><a href="#dessertDishlist">Nachtisch</a></li>
+              </ul>
+            </div>
+            <div class="meals">
+              <div class="mainCategory"><div class="titleCategory">Hauptgerichte</div></div>
+              <div class="restaurantProducts" id="mainDishlist"></div>
+              <div class="asideCategory"><div class="titleCategory">Beilagen</div></div>
+              <div class="restaurantProducts" id="asideDishlist"></div>
+              <div class="dessertCategory"><div class="titleCategory">Nachtisch</div></div>
+              <div class="restaurantProducts" id="dessertDishlist"></div>
+            </div>
+          </div>
+        </div>
+        <div class="basketWrapper">
+          <div class="basket">
+            <div class="basketTitle">Warenkorb</div>
+            <div class="basketList" id="basketList"></div>
+            <div id="cashout"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="sectionDesignFooter">
+      <div class="overallMenu">Text</div>
+    </footer>
+  </body>
+</html>

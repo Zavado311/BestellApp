@@ -1,0 +1,127 @@
+.basketIcon {
+  height: 20px;
+}
+
+.inBasketText {
+  align-items: center;
+}
+
+.basketTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.basketWrapper {
+  width: 300px;
+  flex-grow: 1;
+  margin: 16px 8px;
+}
+
+.basket {
+  width: 100%;
+  position: sticky;
+  top: 5px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.basketList {
+  height: 50vh;
+  overflow: auto;
+}
+
+.basketList::-webkit-scrollbar {
+  display: flex;
+  width: 8px;
+}
+
+.basketList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.basketList::-webkit-scrollbar-thumb {
+  background: #a5a4a4;
+  border-radius: 5px;
+}
+
+.productBox {
+  border-top: solid 1px;
+}
+
+.basketProductTitle {
+  font-size: 20px;
+}
+.aboutPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.changeAmount {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.basketPlaceholder {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overImgBasketPlaceholder {
+  display: flex;
+  justify-content: center;
+}
+
+.imgBasketPlaceholder {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+}
+
+.textBasketPlaceholder {
+  display: flex;
+  justify-content: center;
+}
+
+.basketArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.basketButton {
+  padding: 4px 8px;
+  width: 170px;
+  justify-content: center;
+  background-color: #9fe280;
+  border-radius: 16px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.basketButton:hover {
+  background-color: #04aa6d;
+}
+
+.buttonPayment {
+  background-color: #04aa6d; /* Green */
+  border: none;
+  color: white;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
