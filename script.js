@@ -77,3 +77,5 @@ function sumBasket() {
   sumUp = [];
   return total.toFixed(2);
 }
+
+/*Test*/
