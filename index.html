@@ -14,14 +14,14 @@
   <body onload="init()">
     <header class="sectionDesignHeader">
       <div class="overallMenu">
-        <a href="index.html"><img class="logo" src="/assets/icons/Material/Logo/Bestell App- Logo.svg" alt="" /></a>
-        <nav>
-          <ul>
-            <li><a href="">Test</a></li>
-            <li><a href="">Test</a></li>
-            <li><a href="">Test</a></li>
-          </ul>
-        </nav>
+        <a href="index.html"
+          ><img
+            class="logo"
+            src="/assets/icons/Material/Logo/Bestell App- Logo.svg"
+            alt=""
+        /></a>
+        <div class="hamburger"></div>
+        <!-- Hier Hamburgermenu!!!! -->
       </div>
     </header>
     <main class="sectionDesign">
@@ -52,11 +52,17 @@
               </ul>
             </div>
             <div class="meals">
-              <div class="mainCategory"><div class="titleCategory">Hauptgerichte</div></div>
+              <div class="mainCategory">
+                <div class="titleCategory">Hauptgerichte</div>
+              </div>
               <div class="restaurantProducts" id="mainDishlist"></div>
-              <div class="asideCategory"><div class="titleCategory">Beilagen</div></div>
+              <div class="asideCategory">
+                <div class="titleCategory">Beilagen</div>
+              </div>
               <div class="restaurantProducts" id="asideDishlist"></div>
-              <div class="dessertCategory"><div class="titleCategory">Nachtisch</div></div>
+              <div class="dessertCategory">
+                <div class="titleCategory">Nachtisch</div>
+              </div>
               <div class="restaurantProducts" id="dessertDishlist"></div>
             </div>
           </div>
@@ -71,7 +77,30 @@
       </div>
     </main>
     <footer class="sectionDesignFooter">
-      <div class="overallMenu">Text</div>
+      <div class="overallFooter">
+        <div class="footerMenu">
+          <div class="impressum">
+            <div class="impressumTitle">Impressum</div>
+            <div class="impressumText">
+              Brian Wigger <br />
+              Musterstrasse 14 <br />
+              6050 Musterdorf
+            </div>
+          </div>
+          <div class="socialMedia">
+            <li>
+              <a href="https://www.instagram.com/" target="_blank"
+                ><img src="/assets/icons/instagram.webp" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="https://facebook.com/" target="_blank"
+                ><img src="/assets/icons/facebook.png" alt=""
+              /></a>
+            </li>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

@@ -60,8 +60,10 @@ function getBasketList(index) {
 
 function getPayment() {
   return `
-  <div>Total</div>
-  <div id="sumUp"></div>
+  <div class="sumUp">
+    <div>Total</div>
+    <div id="sumUp"></div>
+  </div>
   <button class="buttonPayment">Bezahlen</button>
   `
 }
@@ -71,7 +73,7 @@ function getPayment() {
 function getPlaceholderBasket() {
   return `
   <div class="basketPlaceholder">
-    <div class="overImgBasketPlaceholder"><img class="imgBasketPlaceholder" src="/assets/img/desert.png"></div>
+  <div class="overImgBasketPlaceholder"><img class="imgBasketPlaceholder" src="/assets/img/desert.png"></div>
     <div class="textBasketPlaceholder">Ganz schön leer hier!</div>
   </div>
   `

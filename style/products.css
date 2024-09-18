@@ -39,6 +39,11 @@
   gap: 4px;
 }
 
+.restaurantProducts:last-child {
+  padding-bottom: 20px;
+}
+
+
 .product {
   background-color: beige;
   border-radius: 4px;

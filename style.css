@@ -16,6 +16,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.d-none {
+  visibility: none;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -37,9 +41,9 @@ header {
 
 .overallMenu {
   max-width: 1440px;
+  padding: 8px 5px ;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -66,6 +70,7 @@ li {
 .content {
   width: calc(100% - 300px);
   padding: 16px 0 0 5px;
+  margin-bottom: 16px;
 }
 
 .backgroundRestaurant {
@@ -189,4 +194,38 @@ li {
 
 .sectionDesignFooter {
   background-color: beige;
+}
+
+.overallFooter {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.footerMenu {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px 15px;
+}
+
+.impressumTitle {
+  font-weight: 800;
+}
+
+.impressum {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.socialMedia img {
+  height: 50px;
+  
 }

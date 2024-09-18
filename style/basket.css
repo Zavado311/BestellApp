@@ -125,3 +125,11 @@
   display: inline-block;
   font-size: 16px;
 }
+
+.sumUp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 5px 0;
+}

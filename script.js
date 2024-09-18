@@ -43,7 +43,7 @@ function showBasket() {
       priceCalculator(index);
     }
     document.getElementById("cashout").innerHTML = getPayment();
-    document.getElementById("sumUp").innerHTML = sumBasket();
+    document.getElementById("sumUp").innerHTML = "CHF " + sumBasket();
   }
 }
 
@@ -77,5 +77,3 @@ function sumBasket() {
   sumUp = [];
   return total.toFixed(2);
 }
-
-/*Test*/
