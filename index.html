@@ -20,12 +20,21 @@
             src="/assets/icons/Material/Logo/Bestell App- Logo.svg"
             alt=""
         /></a>
-        <div class="cartMenu"><img  src="/assets/icons/cart-white.svg" alt=""></div>
-        
+
+        <img
+          onclick="showMenu()"
+          class="cartIcon"
+          src="/assets/icons/cart-white.svg"
+          alt=""
+        />
       </div>
     </header>
     <main class="sectionDesign">
-<!-- Hier Hamburgermenu!!!! -->
+      <div id="menu" class="overlay-menu overflow-hidden">
+        <div class="overallRespBasket" id="RespBasket"></div>
+
+        <button onclick="closeMenu()" class="close-button">Close</button>
+      </div>
       <div class="contentWrapper">
         <div class="content">
           <div class="imgRestaurant">

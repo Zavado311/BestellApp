@@ -16,10 +16,6 @@ body {
   scroll-behavior: smooth;
 }
 
-.d-none {
-  visibility: none;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -39,7 +35,7 @@ header {
   background-color: rgb(243, 142, 59);
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1;
 }
 
 .overallMenu {
@@ -55,11 +51,9 @@ header {
   height: 50px;
 }
 
-.cartMenu {
-}
-
-.cartMenu img {
-  height: 36px;
+.cartIcon {
+  display: none;
+  height: 28px;
   cursor: pointer;
 }
 
@@ -246,6 +240,7 @@ li {
 }
 
 .menu {
+  display: none;
   position: absolute;
   right: 16px;
   width: 50px;
@@ -253,33 +248,42 @@ li {
   cursor: pointer;
 }
 
+
 .overlay-menu {
-  background-color: white;
-  position: absolute;
+  position: fixed; /* Fixed position, damit das Menü die gesamte Seite überlagert */
   right: 0;
   top: 0;
+  width: 100vw; /* Volle Breite */
+  height: 100vh; /* Volle Höhe */
   z-index: 2;
   display: flex;
   flex-direction: column;
-  width: 500px;
-  height: 100vh;
-  border-left: 1px solid black;
-  transform: translateX(501px);
+  transform: translateX(100vw); /* Das Menü ist zunächst außerhalb des Bildschirms */
   color: black;
+  background-color: rgb(243, 142, 59); /* Orange Hintergrundfarbe */
   transition: all 225ms ease-in-out;
 }
 
 .show-overlay-menu {
-  transform: translateX(0);
+  transform: translateX(0); /* Menü wird sichtbar */
 }
 
 .close-button {
   position: absolute;
   right: 16px;
   top: 16px;
+  cursor: pointer; /* Zeigt den Mauszeiger als Zeiger */
 }
 
+
+
+
+
 @media screen and (max-width: 800px) {
+  .cartIcon {
+    display: block;
+  }
+  
   .content {
     width: 100%;
     padding: 20px 5px;

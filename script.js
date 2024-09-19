@@ -78,10 +78,27 @@ function sumBasket() {
   return total.toFixed(2);
 }
 
+function respBasket() {
+  if (basketArray.length == 0) {
+    document.getElementById("RespBasket").innerHTML = getPlaceholderBasket();
+  } else {
+    document.getElementById("RespBasket").innerHTML = "";
+    for (let index = 0; index < basketArray.length; index++) {
+      document.getElementById("RespBasket").innerHTML += getRespBasketList(index);
+      priceCalculator(index);
+    }
+    document.getElementById("cashout").innerHTML = getPayment();
+    document.getElementById("sumUp").innerHTML = "CHF " + sumBasket();
+  }
+}
+
 function showMenu() {
-  document.getElementById('menu').classList.add('show-overlay-menu');
+  document.getElementById("menu").classList.add("show-overlay-menu");
+  document.body.style.overflow = "hidden"; // Scrollen deaktivieren
+  respBasket();
 }
 
 function closeMenu() {
-  document.getElementById('menu').classList.remove('show-overlay-menu');
+  document.getElementById("menu").classList.remove("show-overlay-menu");
+  document.body.style.overflow = ""; // Scrollen wieder aktivieren
 }
