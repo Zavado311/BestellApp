@@ -37,18 +37,26 @@ a {
 
 header {
   background-color: rgb(243, 142, 59);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .overallMenu {
   max-width: 1440px;
-  padding: 8px 5px ;
+  padding: 8px 5px;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
   height: 50px;
+}
+
+.cartMenu img {
+  height: 36px;
 }
 
 .logo:hover {
@@ -92,7 +100,7 @@ li {
   position: absolute;
   display: flex;
   justify-content: center;
-  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
 }
 
 .restaurantTitle {
@@ -115,72 +123,72 @@ li {
 }
 
 .mainCategory {
-    position: relative; 
-    margin-bottom: 5px;
-    height: 75px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  margin-bottom: 5px;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.mainCategory::before {    
-    content: "";
-    background-image: url(/assets/img/Margherita.jpg);
-    background-size: cover;
-    object-position: center;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
+.mainCategory::before {
+  content: "";
+  background-image: url(/assets/img/Margherita.jpg);
+  background-size: cover;
+  object-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
 }
 
 .asideCategory {
-    position: relative; 
-    margin-bottom: 5px;
-    height: 75px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  margin-bottom: 5px;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.asideCategory::before {    
-    content: "";
-    background-image: url(/assets/img/bruschetta.png);
-    background-size: cover;
-    object-position: center;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
+.asideCategory::before {
+  content: "";
+  background-image: url(/assets/img/bruschetta.png);
+  background-size: cover;
+  object-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
 }
 
 .dessertCategory {
-    position: relative; 
-    margin-bottom: 5px;
-    height: 75px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  margin-bottom: 5px;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.dessertCategory::before {    
-    content: "";
-    background-image: url(/assets/img/cheesecake.jpg);
-    background-size: cover;
+.dessertCategory::before {
+  content: "";
+  background-image: url(/assets/img/cheesecake.jpg);
+  background-size: cover;
 
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
 }
 
 .titleCategory {
@@ -227,5 +235,11 @@ li {
 
 .socialMedia img {
   height: 50px;
-  
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    width: 100%;
+    padding: 20px 5px;
+  }
 }
