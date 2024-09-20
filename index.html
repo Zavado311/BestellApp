@@ -24,6 +24,7 @@
         <img
           onclick="showMenu()"
           class="cartIcon"
+          id="respCart"
           src="/assets/icons/cart-white.svg"
           alt=""
         />
@@ -31,11 +32,13 @@
     </header>
     <main class="sectionDesign">
       <div id="menu" class="overlay-menu overflow-hidden">
-        <div class="overallRespBasket">
-          <div class="respBasketTitle">Warenkorb</div>
-          <div id="RespBasket"></div>
+        <div class="respLimitationBasket">
+          <div class="overallRespBasket">
+            <div class="respBasketTitle">Warenkorb</div>
+            <div id="RespBasket"></div>
+          </div>
+          <button onclick="closeMenu()" class="close-button">Close</button>
         </div>
-        <button onclick="closeMenu()" class="close-button">Close</button>
       </div>
       <div class="contentWrapper">
         <div class="content">

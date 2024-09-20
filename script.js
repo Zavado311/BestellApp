@@ -92,13 +92,20 @@ function respBasket() {
   }
 }
 
-function showMenu() {
+function showMenu() { 
   document.getElementById("menu").classList.add("show-overlay-menu");
+  document.getElementById("respCart").src = "/assets/icons/x-solid.svg";
+  document.getElementById('respCart').setAttribute( "onClick", "closeMenu()" );
   document.body.style.overflow = "hidden"; // Scrollen deaktivieren
   respBasket();
 }
 
 function closeMenu() {
-  document.getElementById("menu").classList.remove("show-overlay-menu");
+    document.getElementById("menu").classList.remove("show-overlay-menu");
+    document.getElementById("respCart").src = "/assets/icons/cart-white.svg";
+    document.getElementById('respCart').setAttribute( "onClick", "showMenu()" );
   document.body.style.overflow = ""; // Scrollen wieder aktivieren
+}
+
+function name(params) {
 }

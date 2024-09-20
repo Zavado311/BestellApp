@@ -21,6 +21,10 @@ a {
   color: black;
 }
 
+.d-none {
+  display: none;
+}
+
 .sectionDesign {
   display: flex;
 }
@@ -35,7 +39,7 @@ header {
   background-color: rgb(243, 142, 59);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
 }
 
 .overallMenu {
