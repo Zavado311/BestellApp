@@ -60,18 +60,16 @@ function getBasketList(index) {
 
 function getRespBasketList(index) {
   return `
-    <div class="productBox">
-    <div class="basketProductTitle">${basketArray[index].name}</div>
-    <div class="aboutPrice">
-    <div class="changeAmount">
+    <div class="">${basketArray[index].name}</div>
+    <div class="">
+    <div class="">
       <div onclick="changeAmount(${index}, -1)">-</div>
       <div>${basketArray[index].amount}</div>
       <div onclick="changeAmount(${index}, 1)">+</div>
     </div>
-    <div class="priceProduct">
+    <div class="">
       <div id="calculatorPrice${[index]}"></div>
     </div></div>
-    </div>
     `;
 }
 
