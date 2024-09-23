@@ -92,7 +92,7 @@ function getRespPayment() {
     <div>Total</div>
     <div id="respSumUp"></div>
   </div>
-  <button class="buttonPayment" onclick="submitOrder()">Bezahlen</button>
+  <a class="sendOrder" href="/confirm.html" onclick="submitOrder()">Bezahlen</a>
   `;
 }
 

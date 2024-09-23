@@ -42,7 +42,7 @@ function addBasket(productList, index) {
   } else {
     basketArray.unshift(
       JSON.parse(JSON.stringify(productList[index]))
-    ); /* hier das von ChatGPT einfügen mitparse und stringify */
+    );
   }
   saveIt();
 }

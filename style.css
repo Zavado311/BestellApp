@@ -1,13 +1,14 @@
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/fonts/Roboto-Regular.ttf") format("ttf"),
-    url("fonts/DeineSchriftart.woff") format("woff");
   font-weight: normal;
+  src: url("/assets/fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("/assets/fonts/roboto-regular-webfont.woff") format("woff");
+
   font-style: normal;
 }
 
 body {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -30,9 +31,10 @@ a {
 }
 
 .sectionDesign {
+  display: flex;
+  justify-content: center;
   max-width: 1440px;
   margin: 0 auto;
-  border: 0;
 }
 
 header {
@@ -261,7 +263,7 @@ li {
   flex-direction: column;
   transform: translateX(100vw);
   color: black;
-  background-color: rgb(243, 142, 59); 
+  background-color: rgb(243, 142, 59);
   transition: all 225ms ease-in-out;
 }
 
@@ -277,17 +279,44 @@ li {
 }
 
 .confirmation {
-  font-size: 48px;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.confirmationText {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 32px;
+  padding: 40px 0 48px 0;
+}
+
+.confirmationText2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.confirmationPic {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 48px;
+}
+
+.confirmationPic img {
+  object-fit: cover;
+  object-position: center;
+  height: 500px;  
 }
 
 @media screen and (max-width: 700px) {
   .cartIcon {
     display: block;
   }
-  
+
   .content {
     width: 100%;
     padding: 20px 5px;
