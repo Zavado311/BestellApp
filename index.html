@@ -6,6 +6,7 @@
     <script src="/scripts/template.js"></script>
     <script src="/scripts/objects.js"></script>
     <script src="/script.js"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.png">
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/style/products.css" />
     <link rel="stylesheet" href="/style/basket.css" />
@@ -20,7 +21,6 @@
             src="/assets/icons/Material/Logo/Bestell App- Logo.svg"
             alt=""
         /></a>
-
         <img
           onclick="showMenu()"
           class="cartIcon"
@@ -35,7 +35,8 @@
         <div class="respLimitationBasket">
           <div class="overallRespBasket">
             <div class="respBasketTitle">Warenkorb</div>
-            <div id="RespBasket"></div>
+            <div class="respBasket" id="respShowBasket"></div>
+            <div id="respCashout"></div>
           </div>
           <button onclick="closeMenu()" class="close-button">Close</button>
         </div>

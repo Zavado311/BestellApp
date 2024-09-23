@@ -44,7 +44,7 @@ header {
 
 .overallMenu {
   max-width: 1440px;
-  padding: 8px 5px;
+  padding: 20px 15px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ li {
 .imgLogo {
   height: 100px;
   width: 100px;
-  top: 270px;
+  top: 290px;
   border-radius: 6px;
   position: absolute;
   display: flex;
@@ -184,7 +184,6 @@ li {
   content: "";
   background-image: url(/assets/img/cheesecake.jpg);
   background-size: cover;
-
   position: absolute;
   top: 0px;
   right: 0px;
@@ -214,7 +213,6 @@ li {
 .footerMenu {
   display: flex;
   justify-content: space-between;
-  max-width: 1000px;
   margin: auto;
   padding: 20px 15px;
 }
@@ -252,38 +250,40 @@ li {
   cursor: pointer;
 }
 
-
 .overlay-menu {
-  position: fixed; /* Fixed position, damit das Menü die gesamte Seite überlagert */
+  position: fixed;
   right: 0;
   top: 0;
-  width: 100vw; /* Volle Breite */
-  height: 100vh; /* Volle Höhe */
+  width: 100vw;
+  height: 100vh;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  transform: translateX(100vw); /* Das Menü ist zunächst außerhalb des Bildschirms */
+  transform: translateX(100vw);
   color: black;
-  background-color: rgb(243, 142, 59); /* Orange Hintergrundfarbe */
+  background-color: rgb(243, 142, 59); 
   transition: all 225ms ease-in-out;
 }
 
 .show-overlay-menu {
-  transform: translateX(0); /* Menü wird sichtbar */
+  transform: translateX(0);
 }
 
 .close-button {
   position: absolute;
   right: 16px;
   top: 16px;
-  cursor: pointer; /* Zeigt den Mauszeiger als Zeiger */
+  cursor: pointer;
 }
 
+.confirmation {
+  font-size: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-
-
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .cartIcon {
     display: block;
   }

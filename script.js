@@ -1,8 +1,16 @@
 function init() {
+  getFromLocalStorage();
   renderMainDishes();
   renderAsideDishes();
   renderDessertDishes();
+  respShowBasket();
   showBasket();
+}
+
+function saveIt() {
+  respShowBasket();
+  showBasket();
+  saveToLocalStorage();
 }
 
 function renderMainDishes() {
@@ -25,17 +33,25 @@ function renderDessertDishes() {
 }
 
 function addBasket(productList, index) {
+  let existingProduct = basketArray.find(
+    (item) => item.name === productList[index].name
+  );
+
   if (existInArray(productList, index) === true) {
-    productList[index].amount += 1;
+    existingProduct.amount += 1;
   } else {
-    basketArray.unshift(productList[index]);
+    basketArray.unshift(
+      JSON.parse(JSON.stringify(productList[index]))
+    ); /* hier das von ChatGPT einfügen mitparse und stringify */
   }
-  showBasket();
+  saveIt();
 }
 
 function showBasket() {
   if (basketArray.length == 0) {
     document.getElementById("basketList").innerHTML = getPlaceholderBasket();
+    document.getElementById("cashout").innerHTML = "";
+    document.getElementById("sumUp").innerHTML = "";
   } else {
     document.getElementById("basketList").innerHTML = "";
     for (let index = 0; index < basketArray.length; index++) {
@@ -47,10 +63,34 @@ function showBasket() {
   }
 }
 
+function respShowBasket() {
+  if (basketArray.length == 0) {
+    document.getElementById("respShowBasket").innerHTML =
+      getPlaceholderBasket();
+  } else {
+    document.getElementById("respShowBasket").innerHTML = "";
+    for (let index = 0; index < basketArray.length; index++) {
+      document.getElementById("respShowBasket").innerHTML +=
+        getRespBasketList(index);
+      respPriceCalculator(index);
+    }
+    document.getElementById("respCashout").innerHTML = getRespPayment();
+    document.getElementById("respSumUp").innerHTML = "CHF " + sumBasket();
+  }
+}
+
 function priceCalculator(index) {
   let total = basketArray[index].amount * basketArray[index].price;
 
   document.getElementById(`calculatorPrice${index}`).innerHTML =
+    "CHF " + total.toFixed(2);
+  sumUp.push(total);
+}
+
+function respPriceCalculator(index) {
+  let total = basketArray[index].amount * basketArray[index].price;
+
+  document.getElementById(`respCalculatorPrice${index}`).innerHTML =
     "CHF " + total.toFixed(2);
   sumUp.push(total);
 }
@@ -60,12 +100,12 @@ function existInArray(productList, index) {
 }
 
 function changeAmount(index, value) {
-  basketArray[index].amount += value;
-  if (basketArray[index].amount == 0) {
-    basketArray.splice(index);
-    showBasket();
+  if (basketArray[index].amount == 1 && value == -1) {
+    basketArray.splice(index, 1);
+    saveIt();
   } else {
-    showBasket();
+    basketArray[index].amount += value;
+    saveIt();
   }
 }
 
@@ -78,34 +118,42 @@ function sumBasket() {
   return total.toFixed(2);
 }
 
-function respBasket() {
-  if (basketArray.length == 0) {
-    document.getElementById("RespBasket").innerHTML = getPlaceholderBasket();
-  } else {
-    document.getElementById("RespBasket").innerHTML = "";
-    for (let index = 0; index < basketArray.length; index++) {
-      document.getElementById("RespBasket").innerHTML += getRespBasketList(index);
-      priceCalculator(index);
-    }
-    document.getElementById("cashout").innerHTML = getPayment();
-    document.getElementById("sumUp").innerHTML = "CHF " + sumBasket();
-  }
+function submitOrder() {
+  basketArray = [];
+  sumUp = [];
+  saveIt();
 }
 
-function showMenu() { 
+function showMenu() {
   document.getElementById("menu").classList.add("show-overlay-menu");
   document.getElementById("respCart").src = "/assets/icons/x-solid.svg";
-  document.getElementById('respCart').setAttribute( "onClick", "closeMenu()" );
-  document.body.style.overflow = "hidden"; // Scrollen deaktivieren
-  respBasket();
+  document.getElementById("respCart").setAttribute("onClick", "closeMenu()");
+  document.body.style.overflow = "hidden";
+  respShowBasket();
 }
 
 function closeMenu() {
-    document.getElementById("menu").classList.remove("show-overlay-menu");
-    document.getElementById("respCart").src = "/assets/icons/cart-white.svg";
-    document.getElementById('respCart').setAttribute( "onClick", "showMenu()" );
-  document.body.style.overflow = ""; // Scrollen wieder aktivieren
+  document.getElementById("menu").classList.remove("show-overlay-menu");
+  document.getElementById("respCart").src = "/assets/icons/cart-white.svg";
+  document.getElementById("respCart").setAttribute("onClick", "showMenu()");
+  document.body.style.overflow = "";
 }
 
-function name(params) {
+function saveToLocalStorage() {
+  localStorage.setItem("basketArrayLS", JSON.stringify(basketArray));
+  localStorage.setItem("sumUpLS", JSON.stringify(sumUp));
+  localStorage.setItem("mainDishesLS", JSON.stringify(mainDishes));
+  localStorage.setItem("asideDishesLS", JSON.stringify(asideDishes));
+  localStorage.setItem("dessertDishesLS", JSON.stringify(dessertDishes));
+}
+
+function getFromLocalStorage() {
+  basketArray =
+    JSON.parse(localStorage.getItem("basketArrayLS")) || basketArray;
+  sumUp = JSON.parse(localStorage.getItem("sumUpLS")) || sumUp;
+  mainDishes = JSON.parse(localStorage.getItem("mainDishesLS")) || mainDishes;
+  asideDishes =
+    JSON.parse(localStorage.getItem("asideDishesLS")) || asideDishes;
+  dessertDishes =
+    JSON.parse(localStorage.getItem("dessertDishesLS")) || dessertDishes;
 }

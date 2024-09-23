@@ -60,19 +60,20 @@ function getBasketList(index) {
 
 function getRespBasketList(index) {
   return `
-    <div class="">${basketArray[index].name}</div>
-    <div class="">
-    <div class="">
+    <div class="productBox">
+    <div class="basketProductTitle">${basketArray[index].name}</div>
+    <div class="aboutPrice">
+    <div class="changeAmount">
       <div onclick="changeAmount(${index}, -1)">-</div>
       <div>${basketArray[index].amount}</div>
       <div onclick="changeAmount(${index}, 1)">+</div>
     </div>
-    <div class="">
-      <div id="calculatorPrice${[index]}"></div>
+    <div class="priceProduct">
+      <div id="respCalculatorPrice${[index]}"></div>
     </div></div>
+    </div>
     `;
 }
-
 
 function getPayment() {
   return `
@@ -80,11 +81,20 @@ function getPayment() {
     <div>Total</div>
     <div id="sumUp"></div>
   </div>
-  <button class="buttonPayment">Bezahlen</button>
-  `
+  
+  <a class="sendOrder" href="/confirm.html" onclick="submitOrder()">Bezahlen</a>
+  `;
 }
 
-
+function getRespPayment() {
+  return `
+  <div class="sumUp">
+    <div>Total</div>
+    <div id="respSumUp"></div>
+  </div>
+  <button class="buttonPayment" onclick="submitOrder()">Bezahlen</button>
+  `;
+}
 
 function getPlaceholderBasket() {
   return `
@@ -92,5 +102,5 @@ function getPlaceholderBasket() {
   <div class="overImgBasketPlaceholder"><img class="imgBasketPlaceholder" src="/assets/img/desert.png"></div>
     <div class="textBasketPlaceholder">Ganz schön leer hier!</div>
   </div>
-  `
+  `;
 }
