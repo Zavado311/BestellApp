@@ -15,7 +15,6 @@
   border-radius: 16px;
 }
 
-
 .listPlates li {
   padding: 4px 8px;
   background-color: #9FE280;
@@ -42,7 +41,6 @@
 .restaurantProducts:last-child {
   padding-bottom: 20px;
 }
-
 
 .product {
   background-color: beige;

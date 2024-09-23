@@ -40,9 +40,7 @@ function addBasket(productList, index) {
   if (existInArray(productList, index) === true) {
     existingProduct.amount += 1;
   } else {
-    basketArray.unshift(
-      JSON.parse(JSON.stringify(productList[index]))
-    );
+    basketArray.unshift(JSON.parse(JSON.stringify(productList[index])));
   }
   saveIt();
 }
