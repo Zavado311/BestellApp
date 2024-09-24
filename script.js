@@ -125,6 +125,8 @@ function closeMenu() {
 function checkBasket() {
   if (basketArray.length >= 1) {
     document.getElementById("valueBasket").innerHTML = sumAmount();
+  } else {
+    document.getElementById("valueBasket").innerHTML = "";
   }
 }
 
