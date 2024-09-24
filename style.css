@@ -63,6 +63,20 @@ header {
   cursor: pointer;
 }
 
+.overAllBasketIcon {
+  display: flex;
+  justify-content: center;
+}
+
+.numberInBasket {
+  display: none;
+  position: absolute;
+  font-size: 12px;
+  right: 21px;
+  cursor: pointer;
+}
+
+
 .logo:hover {
   cursor: pointer;
 }
@@ -262,25 +276,6 @@ li {
   cursor: pointer;
 }
 
-.overlayMenu {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(100vw);
-  color: black;
-  background-color: rgb(243, 142, 59);
-  transition: all 225ms ease-in-out;
-}
-
-.show-overlay-menu {
-  transform: translateX(0);
-}
-
 .close-button {
   position: absolute;
   right: 16px;
@@ -327,8 +322,13 @@ li {
     display: block;
   }
 
+  .numberInBasket {
+    display: block;
+  }
+
   .content {
     width: 100%;
     padding: 20px 5px;
   }
+
 }

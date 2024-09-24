@@ -21,26 +21,17 @@
             src="/assets/icons/Material/Logo/Bestell App- Logo.svg"
             alt=""
         /></a>
-        <img
-          onclick="showMenu()"
-          class="cartIcon"
-          id="respCart"
-          src="/assets/icons/cart-white.svg"
-          alt=""
-        />
+        <div id="respCart" class="overAllBasketIcon" onclick="showMenu()">
+          <div id="valueBasket" class="numberInBasket">Test</div>
+          <img
+            class="cartIcon"
+            src="/assets/icons/cart-white.svg"
+            alt=""
+          />
+        </div>
       </div>
     </header>
     <main class="sectionDesign">
-      <div id="menu" class="overlayMenu overflowHidden">
-        <div class="respLimitationBasket">
-          <div class="overallRespBasket">
-            <div class="respBasketTitle">Warenkorb</div>
-            <div class="respBasket" id="respShowBasket"></div>
-            <div id="respCashout"></div>
-          </div>
-          <button onclick="closeMenu()" class="close-button">Close</button>
-        </div>
-      </div>
       <div class="contentWrapper">
         <div class="content">
           <div class="imgRestaurant">
@@ -83,7 +74,7 @@
             </div>
           </div>
         </div>
-        <div class="basketWrapper">
+        <div id="basketMobile" class="basketWrapper">
           <div class="basket">
             <div class="basketTitle">Warenkorb</div>
             <div class="basketList" id="basketList"></div>

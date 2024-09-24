@@ -1,5 +1,6 @@
 let basketArray = [];
 let sumUp = [];
+let amountCounter = [];
 
 let mainDishes = [
   {

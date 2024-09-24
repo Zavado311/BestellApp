@@ -3,14 +3,14 @@ function init() {
   renderMainDishes();
   renderAsideDishes();
   renderDessertDishes();
-  respShowBasket();
   showBasket();
+  checkBasket();
 }
 
 function saveIt() {
-  respShowBasket();
   showBasket();
   saveToLocalStorage();
+  checkBasket();
 }
 
 function renderMainDishes() {
@@ -60,36 +60,13 @@ function showBasket() {
   }
 }
 
-function respShowBasket() {
-  if (basketArray.length == 0) {
-    document.getElementById("respShowBasket").innerHTML =
-      getPlaceholderBasket();
-  } else {
-    document.getElementById("respShowBasket").innerHTML = "";
-    for (let index = 0; index < basketArray.length; index++) {
-      document.getElementById("respShowBasket").innerHTML +=
-        getRespBasketList(index);
-      respPriceCalculator(index);
-    }
-    document.getElementById("respCashout").innerHTML = getRespPayment();
-    document.getElementById("respSumUp").innerHTML = "CHF " + sumBasket();
-  }
-}
-
 function priceCalculator(index) {
   let total = basketArray[index].amount * basketArray[index].price;
-
+let totalAmount = basketArray[index].amount
   document.getElementById(`calculatorPrice${index}`).innerHTML =
     "CHF " + total.toFixed(2);
   sumUp.push(total);
-}
-
-function respPriceCalculator(index) {
-  let total = basketArray[index].amount * basketArray[index].price;
-
-  document.getElementById(`respCalculatorPrice${index}`).innerHTML =
-    "CHF " + total.toFixed(2);
-  sumUp.push(total);
+  amountCounter.push(totalAmount);
 }
 
 function existInArray(productList, index) {
@@ -106,6 +83,15 @@ function changeAmount(index, value) {
   }
 }
 
+function sumAmount() {
+  let total = 0;
+  for (let i = 0; i < amountCounter.length; i++) {
+    total = total += amountCounter[i];
+  }
+  amountCounter = [];
+  return total;
+}
+
 function sumBasket() {
   let total = 0;
   for (let i = 0; i < sumUp.length; i++) {
@@ -115,6 +101,7 @@ function sumBasket() {
   return total.toFixed(2);
 }
 
+
 function submitOrder() {
   basketArray = [];
   sumUp = [];
@@ -122,18 +109,23 @@ function submitOrder() {
 }
 
 function showMenu() {
-  document.getElementById("menu").classList.add("show-overlay-menu");
+  document.getElementById("basketMobile").classList.add("basketMobile");
   document.getElementById("respCart").src = "/assets/icons/x-solid.svg";
   document.getElementById("respCart").setAttribute("onClick", "closeMenu()");
   document.body.style.overflow = "hidden";
-  respShowBasket();
 }
 
 function closeMenu() {
-  document.getElementById("menu").classList.remove("show-overlay-menu");
+  document.getElementById("basketMobile").classList.remove("basketMobile");
   document.getElementById("respCart").src = "/assets/icons/cart-white.svg";
   document.getElementById("respCart").setAttribute("onClick", "showMenu()");
   document.body.style.overflow = "";
+}
+
+function checkBasket() {
+  if (basketArray.length >= 1) {
+    document.getElementById("valueBasket").innerHTML = sumAmount();
+  }
 }
 
 function saveToLocalStorage() {

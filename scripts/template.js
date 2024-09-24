@@ -58,22 +58,6 @@ function getBasketList(index) {
     `;
 }
 
-function getRespBasketList(index) {
-  return `
-    <div class="productBox">
-    <div class="basketProductTitle">${basketArray[index].name}</div>
-    <div class="aboutPrice">
-    <div class="changeAmount">
-      <div onclick="changeAmount(${index}, -1)">-</div>
-      <div>${basketArray[index].amount}</div>
-      <div onclick="changeAmount(${index}, 1)">+</div>
-    </div>
-    <div class="priceProduct">
-      <div id="respCalculatorPrice${[index]}"></div>
-    </div></div>
-    </div>
-    `;
-}
 
 function getPayment() {
   return `
@@ -82,16 +66,6 @@ function getPayment() {
     <div id="sumUp"></div>
   </div>
   
-  <a class="sendOrder" href="/confirm.html" onclick="submitOrder()">Bezahlen</a>
-  `;
-}
-
-function getRespPayment() {
-  return `
-  <div class="sumUp">
-    <div>Total</div>
-    <div id="respSumUp"></div>
-  </div>
   <a class="sendOrder" href="/confirm.html" onclick="submitOrder()">Bezahlen</a>
   `;
 }
