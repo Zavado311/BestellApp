@@ -85,7 +85,7 @@ li {
   margin-bottom: 16px;
 }
 
-.backgroundRestaurant {
+.informationRestaurant {
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
   padding: 4px;
@@ -124,6 +124,16 @@ li {
   object-fit: cover;
   object-position: center;
   border-radius: 16px;
+}
+
+#linkMain {
+  scroll-margin-top: 100px;
+}
+#linkAside {
+  scroll-margin-top: 100px;
+}
+#linkDessert {
+  scroll-margin-top: 100px;
 }
 
 .mainCategory {
@@ -239,7 +249,7 @@ li {
   height: 50px;
 }
 
-.overflow-hidden {
+.overflowHidden {
   overflow-x: hidden;
 }
 
@@ -252,7 +262,7 @@ li {
   cursor: pointer;
 }
 
-.overlay-menu {
+.overlayMenu {
   position: fixed;
   right: 0;
   top: 0;

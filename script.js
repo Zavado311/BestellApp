@@ -49,7 +49,6 @@ function showBasket() {
   if (basketArray.length == 0) {
     document.getElementById("basketList").innerHTML = getPlaceholderBasket();
     document.getElementById("cashout").innerHTML = "";
-    document.getElementById("sumUp").innerHTML = "";
   } else {
     document.getElementById("basketList").innerHTML = "";
     for (let index = 0; index < basketArray.length; index++) {
