@@ -62,7 +62,7 @@ function showBasket() {
 
 function priceCalculator(index) {
   let total = basketArray[index].amount * basketArray[index].price;
-let totalAmount = basketArray[index].amount
+  let totalAmount = basketArray[index].amount;
   document.getElementById(`calculatorPrice${index}`).innerHTML =
     "CHF " + total.toFixed(2);
   sumUp.push(total);
@@ -101,7 +101,6 @@ function sumBasket() {
   return total.toFixed(2);
 }
 
-
 function submitOrder() {
   basketArray = [];
   sumUp = [];
@@ -110,16 +109,19 @@ function submitOrder() {
 
 function showMenu() {
   document.getElementById("basketMobile").classList.add("basketMobile");
-  document.getElementById("respCart").src = "/assets/icons/x-solid.svg";
+  document.getElementById("valueBasket").classList.add("d-none");
+  document.getElementById("cartIconImg").src = "/assets/icons/x-solid.svg";
   document.getElementById("respCart").setAttribute("onClick", "closeMenu()");
   document.body.style.overflow = "hidden";
 }
 
 function closeMenu() {
   document.getElementById("basketMobile").classList.remove("basketMobile");
-  document.getElementById("respCart").src = "/assets/icons/cart-white.svg";
+  document.getElementById("valueBasket").classList.remove("d-none");
+  document.getElementById("cartIconImg").src = "/assets/icons/cart-white.svg";
   document.getElementById("respCart").setAttribute("onClick", "showMenu()");
   document.body.style.overflow = "";
+  init();
 }
 
 function checkBasket() {
